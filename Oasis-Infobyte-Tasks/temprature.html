@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Temperature Converter</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #8ec5fc, #e0c3fc);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #4b0082;
+      margin-bottom: 20px;
+    }
+
+    .converter {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      width: 300px;
+      text-align: center;
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      width: 80%;
+      margin-bottom: 1rem;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .units {
+      margin-bottom: 1rem;
+    }
+
+    .units label {
+      margin-right: 10px;
+    }
+
+    button {
+      background-color: #6a0dad;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #5b0997;
+    }
+
+    .result {
+      margin-top: 1.5rem;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Temperature Converter</h1>
+  <div class="converter">
+    <input type="number" id="tempInput" placeholder="Enter temperature" />
+
+    <div class="units">
+      <label><input type="radio" name="unit" value="celsius" checked> Celsius</label>
+      <label><input type="radio" name="unit" value="fahrenheit"> Fahrenheit</label>
+      <label><input type="radio" name="unit" value="kelvin"> Kelvin</label>
+    </div>
+
+    <button onclick="convertTemp()">Convert</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function convertTemp() {
+      const temp = parseFloat(document.getElementById('tempInput').value);
+      const unit = document.querySelector('input[name="unit"]:checked').value;
+      const resultDiv = document.getElementById('result');
+
+      if (isNaN(temp)) {
+        resultDiv.innerHTML = "❌ Please enter a valid number.";
+        return;
+      }
+
+      let celsius, fahrenheit, kelvin;
+
+      if (unit === "celsius") {
+        fahrenheit = (temp * 9/5) + 32;
+        kelvin = temp + 273.15;
+        resultDiv.innerHTML = `${temp}°C = ${fahrenheit.toFixed(2)}°F | ${kelvin.toFixed(2)}K`;
+      } else if (unit === "fahrenheit") {
+        celsius = (temp - 32) * 5/9;
+        kelvin = (temp - 32) * 5/9 + 273.15;
+        resultDiv.innerHTML = `${temp}°F = ${celsius.toFixed(2)}°C | ${kelvin.toFixed(2)}K`;
+      } else if (unit === "kelvin") {
+        celsius = temp - 273.15;
+        fahrenheit = (temp - 273.15) * 9/5 + 32;
+        resultDiv.innerHTML = `${temp}K = ${celsius.toFixed(2)}°C | ${fahrenheit.toFixed(2)}°F`;
+      }
+    }
+  </script>
+
+</body>
+</html>

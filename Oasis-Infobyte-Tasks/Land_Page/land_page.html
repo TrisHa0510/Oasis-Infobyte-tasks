@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SoundVibe - Music for Everyone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">🎧 SoundVibe</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#discover">Discover</a></li>
+        <li><a href="#artists">Artists</a></li>
+        <li><a href="#login">Login</a></li> <!-- if you have a login section -->
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h1>Feel the Music</h1>
+      <p>Stream your favorite songs, create playlists, and follow top artists. Music that moves with you.</p>
+      <a href="#" class="cta-button">Start Listening</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>Why Choose SoundVibe?</h2>
+    <div class="feature-list">
+      <div class="feature-card">
+        <h3>🎵 Unlimited Streaming</h3>
+        <p>Enjoy millions of tracks anytime, anywhere without limits.</p>
+      </div>
+      <div class="feature-card">
+        <h3>🌐 Explore New Artists</h3>
+        <p>Discover trending and upcoming artists from around the world.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📱 Mobile Friendly</h3>
+        <p>Listen on the go with our fully responsive mobile experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="discover" id="discover">
+    <h2>🎶 Discover New Music</h2>
+    <div class="discover-tools">
+      <input type="text" id="searchInput" placeholder="Search playlists...">
+      <button id="shuffleBtn">🔀 Shuffle</button>
+    </div>
+    <div class="discover-grid" id="discoverGrid">
+      <!-- JS will inject cards -->
+    </div>
+  </section>
+  
+  
+  <section class="artists" id="artists">
+    <h2>🔥 Featured Artists</h2>
+    <div class="artist-grid">
+      <div class="artist-card">
+        <img src="DUA.jpg" alt="Artist 1">
+        <h3>Dua Lipa</h3>
+        <p>Pop queen with powerful vocals and iconic dance hits.</p>
+      </div>
+      <div class="artist-card">
+        <img src="DRAKE.jpg" alt="Artist 2">
+        <h3>Drake</h3>
+        <p>Genre-bending rapper with chart-topping records worldwide.</p>
+      </div>
+      <div class="artist-card">
+        <img src="BTS.jpg" alt="Artist 3">
+        <h3>BTS</h3>
+        <p>K-pop sensations redefining music and global fandom.</p>
+      </div>
+      <div class="artist-card">
+        <img src="ARIJIT.jpg" alt="Artist 2">
+        <h3>Arijit Singh</h3>
+        <p>Arijit Singh is a highly acclaimed and popular Indian playback singer.</p>
+      </div>
+      <div class="artist-card">
+        <img src="SHREYA.jpg" alt="Artist 2">
+        <h3>Shreya Ghoshal</h3>
+        <p>A highly acclaimed Indian playback singer, encapsulates her deep connection and passion for singing. </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="join-us" id="login">
+    <h2>🎶 Join the Vibe</h2>
+    <p>Don’t miss out on the latest tracks, playlists, and artist updates.</p>
+    <div class="join-form">
+      <input type="email" placeholder="Enter your email" />
+      <button>Subscribe</button>
+    </div>
+  </section>
+  
+
+  <footer>
+    <p>© 2025 SoundVibe. All rights reserved.</p>
+  </footer>
+<script src="script.js"></script>
+</body>
+</html>

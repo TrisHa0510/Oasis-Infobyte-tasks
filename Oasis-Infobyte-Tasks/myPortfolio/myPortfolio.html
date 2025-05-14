@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fefbf9;
+      color: #100909;
+    }
+
+    nav {
+      background: #2a2a40;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .theme-toggle {
+      background: #904897;
+      border: none;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(135deg, #9540b5, #467fa0);
+      color: white;
+    }
+
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      margin-bottom: 1rem;
+    }
+
+    .type-text {
+      font-size: 1.2rem;
+      height: 24px;
+      margin-top: 8px;
+      color: #e0e0e0;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #b746e4;
+      margin-bottom: 1.5rem;
+      border-left: 5px solid #9642b8;
+      padding-left: 10px;
+    }
+
+    .project-card {
+      background-color: #f2f2f4;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      background: #2c2c3e;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      display: block;
+    }
+
+    .progress-bar {
+      background: #2a2a40;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .progress-bar span {
+      display: block;
+      height: 20px;
+      background: #8b56a2;
+      animation: fill 2s ease forwards;
+    }
+
+    @keyframes fill {
+      from { width: 0; }
+    }
+
+    .timeline {
+      border-left: 3px solid #a339ae;
+      padding-left: 20px;
+    }
+
+    .timeline-entry {
+      margin-bottom: 20px;
+    }
+
+    .timeline-entry h4 {
+      color: #ae62d4;
+      margin: 5px 0;
+    }
+
+    #resume a {
+      display: inline-block;
+      background: #b05fce;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    #contact p {
+      margin-bottom: 0.7rem;
+    }
+
+    footer {
+      background-color: #181828;
+      text-align: center;
+      padding: 1.5rem;
+      color: #777;
+      margin-top: 3rem;
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #9a38a9;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      font-size: 18px;
+    }
+
+    body.light-mode {
+      background-color: #ffffff;
+      color: #222;
+    }
+
+    body.light-mode nav,
+    body.light-mode footer {
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    body.light-mode .project-card,
+    body.light-mode .gallery-item {
+      background: #f9f9f9;
+      color: #222;
+    }
+
+    body.light-mode header {
+      background: linear-gradient(135deg, #84fab0, #8fd3f4);
+      color: black;
+    }
+
+    body.light-mode .theme-toggle {
+      background: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div><strong>MyPortfolio</strong></div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+  </nav>
+
+  <header>
+    <img src="trisha3.jpg" alt="Profile Picture" class="profile-pic">
+    <h1>Trisha Patil</h1>
+    <div class="type-text" id="typing-text"></div>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm currently in my second year of B.Tech in Information Technology at Uka Tarsadia University. Passionate about front-end development, design patterns, and creating clean, user-friendly presentations. I'm actively looking for internship and job opportunities where I can grow, contribute, and bring creative ideas to life.</p>
+  </section>
+  <section id="personal-info">
+    <h2>Personal Information</h2>
+    <ul>
+      <li><strong>Name:</strong> Trisha Patil</li>
+      <li><strong>Email:</strong> trisha5102005@gmail.com</li>
+      <li><strong>Location:</strong> Bharuch, Gujarat</li>
+    </ul>
+  </section>
+  
+  <section id="education">
+    <h2>Education</h2>
+    <div class="timeline">
+      <div class="timeline-entry">
+        <h4>Bachelor of Technology in Information Technology</h4>
+        <p>Uka tarsadia University | 2023 - 2027</p>
+        <p>CGPA: 8.63/10</p>
+      </div>
+      <div class="timeline-entry">
+        <h4>Senior Secondary (12th Grade)</h4>
+        <p>Chankya Vidhyalaya School | 2022- 2023</p>
+        <p>Percentage: 70%</p>
+      </div>
+      <div class="timeline-entry">
+        <h4>Secondary School (10th Grade)</h4>
+        <p>Gattu Vidhyalaya School | 2020 - 2021</p>
+        <p>Percentage: 80%</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div>
+      <p>HTML</p>
+      <div class="progress-bar"><span style="width: 95%;"></span></div>
+
+      <p>CSS</p>
+      <div class="progress-bar"><span style="width: 90%;"></span></div>
+
+      <p>JavaScript</p>
+      <div class="progress-bar"><span style="width: 80%;"></span></div>
+
+      <p>Python</p>
+      <div class="progress-bar"><span style="width: 70%;"></span></div>
+      
+      <p>Java</p>
+      <div class="progress-bar"><span style="width: 80%;"></span></div>
+      
+      <p>Mysql</p>
+      <div class="progress-bar"><span style="width: 80%;"></span></div>
+
+      <p>React.js</p>
+      <div class="progress-bar"><span style="width: 80%;"></span></div>
+
+      <p>Node.js</p>
+      <div class="progress-bar"><span style="width: 80%;"></span></div>
+      <p>Express.js</p>
+      <div class="progress-bar"><span style="width: 80%;"></span></div>
+      
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>GPA Calculator</h3>
+      <p>Responsive GPA calculator using HTML, CSS, and JavaScript.</p>
+    </div>
+    <div class="project-card">
+      <h3>Captiva Web</h3>
+      <p>Front-end website of company using Html, css, JavaScript.</p>
+    </div>
+
+    <h3 style="margin-top: 2rem;">Gallery</h3>
+    <div class="project-gallery">
+      <div class="gallery-item"><img src="S1 (2).png" alt="Project 1" /></div>
+      <div class="gallery-item"><img src="p2.png" alt="Project 2" /></div>
+    </div>
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <a href="resume.pdf" download>Download My Resume</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: trisha5102005@gmail.com</p>
+    <p>GitHub: <a href="https://github.com/TrisHa0510" target="_blank">https://github.com/TrisHa0510</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/trisha-patil-629ab3300?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BQaeFfFjRRa6rbUO9iMIGfA%3D%3D" target="_blank">linkedin.com/in/trishapatil</a></p>
+  </section>
+  <section id="certifications">
+    <h2>Certifications</h2>
+  
+    <div class="project-card">
+      <h3>Python programming - Scaler</h3>
+      <img src="c1.jpg" alt="pyhton Certificate" style="max-width: 100%; border-radius: 10px; margin-top: 10px;">
+    </div>
+  
+    <div class="project-card">
+      <h3>Software Development - citi, forage</h3>
+      <img src="c2.png" alt="Software development task Certificate" style="max-width: 100%; border-radius: 10px; margin-top: 10px;">
+    </div>
+  
+  </section>
+  
+  
+  <!-- Hobbies and Interests -->
+  <section id="hobbies">
+    <h2>Hobbies & Interests</h2>
+    <p>-I love making mandala art, dancing, singing and exploring UI/UX designs.</p>
+      <p>-I enjoy contributing to open-source projects in my free time.</p>
+    <p>-Building interactive web apps and exploring new frontend tools.</p>
+    <p>-Designing UI layouts and experimenting with color palettes.</p>
+  </section>
+
+  <!-- Fun Facts -->
+  <section id="funfacts">
+    <h2>Fun Facts</h2>
+    <ul>
+      <li>🌍 I’ve built websites for abroad company. </li>
+      <li>⚡ My fastest website build was in under 2 hours.</li>
+      <li>☕ I drink coffee only while debugging.</li>
+      <li>🎬 Favorite coding soundtrack: Lo-Fi Chill Beats</li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 trisha patil. Built with ❤️ and HTML/CSS/JS.
+  </footer>
+
+  <button onclick="scrollToTop()" id="topBtn">&#8679;</button>
+
+  <script>
+    // Theme Toggle
+    function toggleTheme() {
+      document.body.classList.toggle("light-mode");
+    }
+
+    // Back to Top Button
+    let topBtn = document.getElementById("topBtn");
+    window.onscroll = function() {
+      topBtn.style.display = window.scrollY > 100 ? "block" : "none";
+    };
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Typing Animation
+    const text = "Website Developer | UI/UX Explorer | Lifelong Learner";
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        document.getElementById("typing-text").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, 60);
+      }
+    }
+    type();
+  </script>
+
+</body>
+</html>

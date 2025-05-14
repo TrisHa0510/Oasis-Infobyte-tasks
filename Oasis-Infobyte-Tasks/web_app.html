@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>To-Do web App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 700px;
+      width: 100%;
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      color: #2d3436;
+      margin-bottom: 25px;
+    }
+
+    .task-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    input[type="text"],
+    input[type="datetime-local"],
+    select {
+      flex: 1;
+      padding: 12px;
+      font-size: 1rem;
+      border: 2px solid #ddd;
+      border-radius: 12px;
+    }
+
+    button {
+      padding: 12px 18px;
+      font-size: 0.95rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-add {
+      background: #00b894;
+      color: white;
+    }
+
+    .btn-add:hover {
+      background: #019170;
+    }
+
+    h2 {
+      margin: 20px 0 10px;
+      font-size: 1.3rem;
+      color: #2c3e50;
+    }
+
+    .task {
+      background: #f0f4f8;
+      border-left: 6px solid #0984e3;
+      padding: 15px 20px;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.3s;
+    }
+
+    .task:hover {
+      transform: scale(1.02);
+    }
+
+    .task.high { border-left-color: #e74c3c; }
+    .task.medium { border-left-color: #f39c12; }
+    .task.low { border-left-color: #2ecc71; }
+
+    .task p {
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .task span {
+      font-size: 0.85rem;
+      color: #636e72;
+      display: block;
+    }
+
+    .actions button {
+      margin-left: 6px;
+    }
+
+    .btn-edit { background: #feca57; color: #2d3436; }
+    .btn-complete { background: #54a0ff; color: white; }
+    .btn-delete { background: #ff6b6b; color: white; }
+
+    @media (max-width: 600px) {
+      .task-form { flex-direction: column; }
+      .task { flex-direction: column; align-items: flex-start; }
+      .actions { margin-top: 8px; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>✨ Stylish To-Do List with Reminders</h1>
+
+    <div class="task-form">
+      <input type="text" id="taskInput" placeholder="What needs to be done?" />
+      <input type="datetime-local" id="dueTime" />
+      <select id="priority">
+        <option value="medium">Priority: Medium</option>
+        <option value="high">Priority: High</option>
+        <option value="low">Priority: Low</option>
+      </select>
+      <button class="btn-add" onclick="addTask()">Add Task</button>
+    </div>
+
+    <h2>📌 Pending Tasks</h2>
+    <div id="pendingTasks"></div>
+
+    <h2>✅ Completed Tasks</h2>
+    <div id="completedTasks"></div>
+  </div>
+
+  <script>
+    if ('Notification' in window) {
+      Notification.requestPermission();
+    }
+
+    let pendingTasks = JSON.parse(localStorage.getItem("pending")) || [];
+    let completedTasks = JSON.parse(localStorage.getItem("completed")) || [];
+
+    function formatTime() {
+      return new Date().toLocaleString();
+    }
+
+    function saveData() {
+      localStorage.setItem("pending", JSON.stringify(pendingTasks));
+      localStorage.setItem("completed", JSON.stringify(completedTasks));
+    }
+
+    function renderTasks() {
+      const pendingDiv = document.getElementById("pendingTasks");
+      const completedDiv = document.getElementById("completedTasks");
+      pendingDiv.innerHTML = '';
+      completedDiv.innerHTML = '';
+
+      pendingTasks.forEach((task, i) => {
+        const el = document.createElement("div");
+        el.className = `task ${task.priority}`;
+        el.innerHTML = `
+          <div>
+            <p>${task.text}</p>
+            <span>Added: ${task.addedAt}</span>
+            <span>Due: ${task.dueTime ? new Date(task.dueTime).toLocaleString() : 'N/A'}</span>
+          </div>
+          <div class="actions">
+            <button class="btn-edit" onclick="editTask(${i}, 'pending')">Edit</button>
+            <button class="btn-complete" onclick="completeTask(${i})">✓</button>
+            <button class="btn-delete" onclick="deleteTask(${i}, 'pending')">🗑</button>
+          </div>
+        `;
+        pendingDiv.appendChild(el);
+      });
+
+      completedTasks.forEach((task, i) => {
+        const el = document.createElement("div");
+        el.className = `task ${task.priority}`;
+        el.innerHTML = `
+          <div>
+            <p><del>${task.text}</del></p>
+            <span>Completed: ${task.completedAt}</span>
+          </div>
+          <div class="actions">
+            <button class="btn-edit" onclick="editTask(${i}, 'completed')">Edit</button>
+            <button class="btn-delete" onclick="deleteTask(${i}, 'completed')">🗑</button>
+          </div>
+        `;
+        completedDiv.appendChild(el);
+      });
+    }
+
+    function addTask() {
+      const input = document.getElementById("taskInput");
+      const priority = document.getElementById("priority").value;
+      const dueTime = document.getElementById("dueTime").value;
+      const text = input.value.trim();
+
+      if (text) {
+        pendingTasks.push({
+          text,
+          addedAt: formatTime(),
+          dueTime,
+          priority,
+          reminded: false
+        });
+        input.value = '';
+        document.getElementById("dueTime").value = '';
+        renderTasks();
+        saveData();
+      }
+    }
+
+    function completeTask(index) {
+      const task = pendingTasks.splice(index, 1)[0];
+      task.completedAt = formatTime();
+      completedTasks.push(task);
+      renderTasks();
+      saveData();
+    }
+
+    function deleteTask(index, type) {
+      if (confirm("Delete this task?")) {
+        if (type === 'pending') pendingTasks.splice(index, 1);
+        else completedTasks.splice(index, 1);
+        renderTasks();
+        saveData();
+      }
+    }
+
+    function editTask(index, type) {
+      const list = type === 'pending' ? pendingTasks : completedTasks;
+      const newText = prompt("Edit task:", list[index].text);
+      if (newText) {
+        list[index].text = newText;
+        renderTasks();
+        saveData();
+      }
+    }
+
+    // Check for due tasks every minute
+    setInterval(() => {
+      const now = new Date();
+      pendingTasks.forEach((task, index) => {
+        if (task.dueTime && !task.reminded && new Date(task.dueTime) <= now) {
+          task.reminded = true;
+          if (Notification.permission === 'granted') {
+            new Notification("Reminder 🕒", {
+              body: `Don't forget: "${task.text}"`
+            });
+          } else {
+            alert(`Reminder: "${task.text}" is due!`);
+          }
+          saveData();
+        }
+      });
+    }, 60000); // every 60 seconds
+
+    renderTasks();
+  </script>
+
+</body>
+</html>

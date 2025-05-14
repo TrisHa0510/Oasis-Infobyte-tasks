@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tribute to Chhatrapati Shivaji Maharaj</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fffaf0;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #8B0000;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .image-section, .gallery {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .image-section img {
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .gallery img {
+      width: 200px;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      color: #8B0000;
+      border-bottom: 2px solid #8B0000;
+      padding-bottom: 5px;
+    }
+
+    p {
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: #fff;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #8B0000;
+      color: white;
+    }
+    .timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px 0;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #8B0000;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.timeline-item {
+  padding: 20px 30px;
+  position: relative;
+  width: 50%;
+  background-color: inherit;
+}
+
+.timeline-item.left {
+  left: 0;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-item::before {
+  content: " ";
+  position: absolute;
+  top: 20px;
+  width: 25px;
+  height: 25px;
+  right: -13px;
+  background-color: #fff;
+  border: 4px solid #8B0000;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-item.right::before {
+  left: -13px;
+}
+
+.timeline-item h3 {
+  margin-top: 0;
+  color: #8B0000;
+}
+
+.timeline-item span {
+  font-weight: bold;
+  color: #555;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.timeline-item p {
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline::after {
+    left: 31px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .timeline-item.right {
+    left: 0%;
+  }
+
+  .timeline-item::before {
+    left: 18px;
+  }
+}
+
+
+    #quote-box {
+      background-color: #f8f8f8;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    #quote-text {
+      font-style: italic;
+      font-size: 1.2em;
+    }
+
+    #quote-author {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    iframe {
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #777;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Chhatrapati Shivaji Maharaj</h1>
+    <p>The Great Maratha Warrior King</p>
+  </header>
+
+  <div class="container">
+
+    <div class="image-section">
+      <img src="shivaji.jpeg" alt="Shivaji Maharaj">
+      <p><em>Portrait of Chhatrapati Shivaji Maharaj</em></p>
+    </div>
+
+    <h2>Introduction</h2>
+    <p>Chhatrapati Shivaji Maharaj (1630 – 1680) was the founder of the Maratha Empire in western India. Known for his innovative military tactics and smart administrative policies, he built a progressive kingdom rooted in justice, security, and empowerment.</p>
+
+    <p>He championed Swarajya (self-rule) and fought against the Mughal Empire and other invaders, carving out a strong and independent Maratha kingdom.</p>
+
+    <h2>Early Life</h2>
+    <p>Shivaji was born in the hill-fort of Shivneri in Maharashtra. From a young age, he was influenced by the stories of valor and the teachings of his mother, Jijabai, and his guru, Dadoji Konddeo. His spirit for independence and justice was nurtured early on.</p>
+
+    <div class="gallery">
+      <img src="darbar.jpeg" alt="Shivaji's Darbar">
+      <img src="museum.jpeg" alt="Shivaji Maharaj Museum">
+      <img src="darbar2.jpeg" alt="Shivaji Maharaj Museum">
+      <img src="i3.jpeg" alt="Shivaji Maharaj Museum">
+      <p><em>Shivaji Maharaj’s court and legacy in museums</em></p>
+    </div>
+    <h2>Interactive Timeline of Major Battles</h2>
+<div class="timeline">
+  <div class="timeline-item left">
+    <h3>Battle of Pratapgad</h3>
+    <span>1659</span>
+    <p>Shivaji Maharaj defeated Afzal Khan in this famous battle using guerrilla tactics and exceptional strategy.</p>
+  </div>
+  <div class="timeline-item right">
+    <h3>Battle of Kolhapur</h3>
+    <span>1659</span>
+    <p>Fought against Bijapur forces, this battle showcased Shivaji’s bold military brilliance and speed.</p>
+  </div>
+  <div class="timeline-item left">
+    <h3>Battle of Pavan Khind</h3>
+    <span>1660</span>
+    <p>Shivaji’s loyal general Baji Prabhu Deshpande laid down his life to help Shivaji escape a Mughal siege.</p>
+  </div>
+  <div class="timeline-item right">
+    <h3>Battle of Purandar</h3>
+    <span>1665</span>
+    <p>Fought against the Mughals under Raja Jai Singh. The Treaty of Purandar followed this battle.</p>
+  </div>
+  <div class="timeline-item left">
+    <h3>Battle of Sinhagad</h3>
+    <span>1670</span>
+    <p>Fought and recaptured from the Mughals. Tanaji Malusare became immortal in Maratha history.</p>
+  </div>
+</div>
+
+
+    <h2>Inspiring Quotes</h2>
+    <div id="quote-box">
+      <blockquote id="quote-text">"Freedom is a boon, which everyone has the right to receive."</blockquote>
+      <p id="quote-author">— Shivaji Maharaj</p>
+    </div>
+
+    <h2>Major Milestones</h2>
+    <table>
+      <tr>
+        <th>Year</th>
+        <th>Event</th>
+      </tr>
+      <tr>
+        <td>1630</td>
+        <td>Born at Shivneri Fort</td>
+      </tr>
+      <tr>
+        <td>1645</td>
+        <td>Declared intention to establish Swarajya</td>
+      </tr>
+      <tr>
+        <td>1659</td>
+        <td>Defeated Afzal Khan in a legendary encounter</td>
+      </tr>
+      <tr>
+        <td>1674</td>
+        <td>Crowned as Chhatrapati at Raigad Fort</td>
+      </tr>
+      <tr>
+        <td>1680</td>
+        <td>Passed away, leaving behind a powerful legacy</td>
+      </tr>
+    </table>
+
+    <h2>Values and Governance</h2>
+    <p>Shivaji Maharaj was a secular ruler who respected all religions. He encouraged the use of the Marathi language in administration and built forts, ports, and a strong navy to protect his empire. He promoted the welfare of his people and upheld the dignity of women.</p>
+
+    <p>His <strong>Ashtapradhan Mandal</strong> (Council of Eight Ministers) was an early form of cabinet-style governance, demonstrating his foresight in administration.</p>
+
+    <h2>Major Forts</h2>
+    <p>Here are some of the significant forts associated with Shivaji Maharaj's leadership and conquests:</p>
+    <iframe 
+      src="fort.jpg" 
+      width="90%" 
+      height="480" 
+      style="border:0;" 
+      allowfullscreen>
+    </iframe>
+
+    <h2>Legacy</h2>
+    <p>Shivaji Maharaj remains a national hero. Statues, forts, literature, and legends about his life continue to inspire generations. His ideals of self-rule, fairness, and patriotism are cherished throughout India and beyond.</p>
+
+  </div>
+
+  <footer>
+    Created as a tribute to the legendary Chhatrapati Shivaji Maharaj – the true embodiment of courage and leadership.
+  </footer>
+
+  <script>
+    const quotes = [
+      {
+        text: "Freedom is a boon, which everyone has the right to receive.",
+        author: "Shivaji Maharaj"
+      },
+      {
+        text: "Never bend your head. Always hold it high. Look the world straight in the eye.",
+        author: "Shivaji Maharaj"
+      },
+      {
+        text: "Of all the rights of women, the greatest is to be a mother.",
+        author: "Shivaji Maharaj"
+      },
+      {
+        text: "A great man is different from an eminent one in that he is ready to be the servant of society.",
+        author: "Shivaji Maharaj"
+      }
+    ];
+
+    let i = 0;
+    setInterval(() => {
+      i = (i + 1) % quotes.length;
+      document.getElementById('quote-text').textContent = `"${quotes[i].text}"`;
+      document.getElementById('quote-author').textContent = `— ${quotes[i].author}`;
+    }, 5000);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="A simple login and registration system with localStorage and frontend validation." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Registration System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef2f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 350px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #4CAF50;
+    }
+
+    .tab-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .tab-buttons button {
+      width: 49%;
+      padding: 10px;
+      border: none;
+      background: #ddd;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    .tab-buttons button.active {
+      background: #4CAF50;
+      color: white;
+    }
+
+    .form {
+      display: none;
+      flex-direction: column;
+    }
+
+    .form.active {
+      display: flex;
+    }
+
+    input {
+      padding: 10px;
+      margin: 6px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button.submit-btn {
+      margin-top: 10px;
+      padding: 10px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .logout-btn {
+      margin-top: 15px;
+      background: #f44336;
+    }
+
+    #message {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Login & Registration System</h1> <!-- Visible title on the page -->
+    <div class="tab-buttons">
+      <button id="loginTab" class="active" onclick="switchTab('login')">Login</button>
+      <button id="registerTab" onclick="switchTab('register')">Register</button>
+    </div>
+
+    <div id="loginForm" class="form active">
+      <input type="text" id="loginUsername" placeholder="Username" />
+      <input type="password" id="loginPassword" placeholder="Password" />
+      <button class="submit-btn" onclick="login()">Login</button>
+    </div>
+
+    <div id="registerForm" class="form">
+      <input type="text" id="regUsername" placeholder="Username" />
+      <input type="password" id="regPassword" placeholder="Password" />
+      <input type="password" id="regConfirm" placeholder="Confirm Password" />
+      <button class="submit-btn" onclick="register()">Register</button>
+    </div>
+
+    <div id="userArea" style="display: none;">
+      <h2 id="welcomeMessage"></h2>
+      <button class="submit-btn logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <div id="message"></div>
+  </div>
+
+  <script>
+    // Setup
+    const users = JSON.parse(localStorage.getItem('users')) || {};
+
+    function saveUsers() {
+      localStorage.setItem('users', JSON.stringify(users));
+    }
+
+    function switchTab(tab) {
+      document.getElementById('loginForm').classList.remove('active');
+      document.getElementById('registerForm').classList.remove('active');
+      document.getElementById('loginTab').classList.remove('active');
+      document.getElementById('registerTab').classList.remove('active');
+      document.getElementById(tab + 'Form').classList.add('active');
+      document.getElementById(tab + 'Tab').classList.add('active');
+      clearMessage();
+    }
+
+    function showMessage(msg, type = 'success') {
+      const el = document.getElementById('message');
+      el.innerText = msg;
+      el.className = type;
+    }
+
+    function clearMessage() {
+      const el = document.getElementById('message');
+      el.innerText = '';
+      el.className = '';
+    }
+
+    function login() {
+      const username = document.getElementById('loginUsername').value.trim();
+      const password = document.getElementById('loginPassword').value;
+
+      if (!username || !password) {
+        return showMessage("Please fill in both fields.", "error");
+      }
+
+      if (users[username] === password) {
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('registerForm').style.display = 'none';
+        document.getElementById('userArea').style.display = 'flex';
+        document.getElementById('welcomeMessage').innerText = `Welcome, ${username}!`;
+        clearMessage();
+      } else {
+        showMessage("Invalid username or password.", "error");
+      }
+    }
+
+    function register() {
+      const username = document.getElementById('regUsername').value.trim();
+      const password = document.getElementById('regPassword').value;
+      const confirm = document.getElementById('regConfirm').value;
+
+      if (!username || !password || !confirm) {
+        return showMessage("All fields are required.", "error");
+      }
+
+      if (users[username]) {
+        return showMessage("Username already exists.", "error");
+      }
+
+      if (password !== confirm) {
+        return showMessage("Passwords do not match.", "error");
+      }
+
+      users[username] = password;
+      saveUsers();
+      showMessage("Registration successful! You can now log in.");
+      switchTab('login');
+    }
+
+    function logout() {
+      document.getElementById('userArea').style.display = 'none';
+      document.getElementById('loginForm').style.display = 'flex';
+      switchTab('login');
+      showMessage("You have been logged out.");
+    }
+  </script>
+</body>
+</html>
