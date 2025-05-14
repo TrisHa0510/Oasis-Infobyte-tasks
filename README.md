@@ -46,4 +46,4 @@ This repository contains a collection of beginner-friendly web development proje
 ## 🚀 How to Run
 1. Download or clone this repository:
    ```bash
-   git clone https://github.com/your-username/HTML-Basic-Projects.git
+   git clone https://github.com/TrisHa0510/Oasis-Infobyte-tasks.git
