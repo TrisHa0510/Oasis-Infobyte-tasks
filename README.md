@@ -9,6 +9,7 @@ This repository contains a collection of beginner-friendly web development proje
 ### 1. 🔢 `calculator.html`
 - A basic calculator that supports operations like addition, subtraction, multiplication, and division.
 - **Tech used:** HTML, CSS, JavaScript
+-  **Live**: [View Calculator](https://TrisHa0510.github.io/Oasis-Infobyte-tasks/calculator.html)
 
 ### 2. 🔐 `login.html`
 - A simple and clean login form for user authentication interfaces.
