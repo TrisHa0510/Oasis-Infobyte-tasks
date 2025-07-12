@@ -11,7 +11,7 @@ This repository contains a collection of beginner-friendly web development proje
 - **Tech used:** HTML, CSS, JavaScript  
 - **Live:** [View Calculator](https://TrisHa0510.github.io/Oasis-Infobyte-tasks/calculator.html)
 - **Screenshot:**  
-  ![Calculator](screenshots/calculator.png)
+  ![Calculator](screenshots/Calculator.png)
 
 ---
 
@@ -19,7 +19,7 @@ This repository contains a collection of beginner-friendly web development proje
 - A clean and responsive login form interface.
 - **Tech used:** HTML, CSS  
 - **Screenshot:**  
-  ![Login Form](screenshots/login.png)
+  ![Login Form](screenshots/Login.png)
 
 ---
 
