@@ -10,8 +10,9 @@ This repository contains a collection of beginner-friendly web development proje
 - A basic calculator supporting addition, subtraction, multiplication, and division.
 - **Tech used:** HTML, CSS, JavaScript  
 - **Live:** [View Calculator](https://TrisHa0510.github.io/Oasis-Infobyte-tasks/calculator.html)
-- **Screenshot:**  
-  ![Calculator](screenshots/Calculator.png)
+<p align="center">
+ <img src="Calculator.png" alt="Banner" />
+</p>
 
 ---
 
