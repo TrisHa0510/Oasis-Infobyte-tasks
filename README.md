@@ -43,7 +43,7 @@ This repository contains a collection of beginner-friendly web development proje
 - A product landing page with a modern design.
 - **Tech used:** HTML, CSS  
 - **Screenshot:**  
-  ![Landing Page](screenshots/Screenshot 2025-07-12 182415.png)
+  ![Landing Page](screenshots/landing-page.png)
 
 ---
 
@@ -51,7 +51,7 @@ This repository contains a collection of beginner-friendly web development proje
 - A personal portfolio with About, Projects, and Contact sections.
 - **Tech used:** HTML, CSS  
 - **Screenshot:**  
-  ![Portfolio](screenshots/Screenshot 2025-07-12 182435.png)
+  ![Portfolio](screenshots/portfolio.png)
 
 ---
 
@@ -59,7 +59,7 @@ This repository contains a collection of beginner-friendly web development proje
 - A tribute page designed to honor a famous person.
 - **Tech used:** HTML, CSS  
 - **Screenshot:**  
-  ![Tribute Page](screenshots/Screenshot 2025-07-12 182504.png)
+  ![Tribute Page](screenshots/Tribute-page.png)
 
 ---
 
