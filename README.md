@@ -9,7 +9,7 @@ This repository contains a collection of beginner-friendly web development proje
 ### 1. 🔢 Calculator
 - A basic calculator supporting addition, subtraction, multiplication, and division.
 - **Tech used:** HTML, CSS, JavaScript  
-<p align="center">
+<p>
  <img src="Calculator.png" alt="Banner" width=50% />
 </p>
 
@@ -19,7 +19,7 @@ This repository contains a collection of beginner-friendly web development proje
 - A clean and responsive login form interface.
 - **Tech used:** HTML, CSS  
 - **Screenshot:**  
-  <p align="center">
+  <p>
  <img src="login.png" alt="Banner" width=50% />
 </p>
 
@@ -29,7 +29,7 @@ This repository contains a collection of beginner-friendly web development proje
 - Convert temperatures between Celsius, Fahrenheit, and Kelvin.
 - **Tech used:** HTML, CSS, JavaScript  
 - **Screenshot:**  
- <p align="center">
+ <p>
  <img src="temperature.png" alt="Banner" width=50%/>
 </p>
 ---
@@ -38,7 +38,7 @@ This repository contains a collection of beginner-friendly web development proje
 - A mini web application layout with interactive fields.
 - **Tech used:** HTML, CSS, JavaScript  
 - **Screenshot:**  
- <p align="center">
+ <p>
  <img src="web-app.png" alt="Banner" width=50% />
 </p>
 
@@ -48,7 +48,7 @@ This repository contains a collection of beginner-friendly web development proje
 - A product landing page with a modern design.
 - **Tech used:** HTML, CSS  
 - **Screenshot:**  
-  <p align="center">
+  <p>
  <img src="landing-page.png" alt="Banner" />
 </p>
 
@@ -58,7 +58,7 @@ This repository contains a collection of beginner-friendly web development proje
 - A personal portfolio with About, Projects, and Contact sections.
 - **Tech used:** HTML, CSS  
 - **Screenshot:**  
- <p align="center">
+ <p>
  <img src="portfolio.png" alt="Banner" />
 </p>
 
@@ -68,7 +68,7 @@ This repository contains a collection of beginner-friendly web development proje
 - A tribute page designed to honor a famous person.
 - **Tech used:** HTML, CSS  
 - **Screenshot:**  
-<p align="center">
+<p>
  <img src="Tribute-page.png" alt="Banner" />
 </p>
 
