@@ -20,7 +20,7 @@ This repository contains a collection of beginner-friendly web development proje
 - **Tech used:** HTML, CSS  
 - **Screenshot:**  
   <p align="center">
- <img src="Login.png" alt="Banner" />
+ <img src="Login.png" alt="Banner" width=50% />
 </p>
 
 ---
@@ -30,7 +30,7 @@ This repository contains a collection of beginner-friendly web development proje
 - **Tech used:** HTML, CSS, JavaScript  
 - **Screenshot:**  
  <p align="center">
- <img src="temperature.png" alt="Banner" />
+ <img src="temperature.png" alt="Banner" width=50%/>
 </p>
 ---
 
@@ -39,7 +39,7 @@ This repository contains a collection of beginner-friendly web development proje
 - **Tech used:** HTML, CSS, JavaScript  
 - **Screenshot:**  
  <p align="center">
- <img src="web-app.png" alt="Banner" />
+ <img src="web-app.png" alt="Banner" width=50% />
 </p>
 
 ---
