@@ -9,7 +9,6 @@ This repository contains a collection of beginner-friendly web development proje
 ### 1. 🔢 Calculator
 - A basic calculator supporting addition, subtraction, multiplication, and division.
 - **Tech used:** HTML, CSS, JavaScript  
-- **Live:** [View Calculator](https://TrisHa0510.github.io/Oasis-Infobyte-tasks/calculator.html)
 <p align="center">
  <img src="Calculator.png" alt="Banner" />
 </p>
@@ -20,7 +19,9 @@ This repository contains a collection of beginner-friendly web development proje
 - A clean and responsive login form interface.
 - **Tech used:** HTML, CSS  
 - **Screenshot:**  
-  ![Login Form](screenshots/Login.png)
+  <p align="center">
+ <img src="Login.png" alt="Banner" />
+</p>
 
 ---
 
@@ -28,15 +29,18 @@ This repository contains a collection of beginner-friendly web development proje
 - Convert temperatures between Celsius, Fahrenheit, and Kelvin.
 - **Tech used:** HTML, CSS, JavaScript  
 - **Screenshot:**  
-  ![Temperature Converter](screenshots/temperature.png)
-
+ <p align="center">
+ <img src="temperature.png" alt="Banner" />
+</p>
 ---
 
 ### 4. 🧩 Web App UI
 - A mini web application layout with interactive fields.
 - **Tech used:** HTML, CSS, JavaScript  
 - **Screenshot:**  
-  ![Web App](screenshots/web_app.png)
+ <p align="center">
+ <img src="web-app.png" alt="Banner" />
+</p>
 
 ---
 
@@ -44,7 +48,9 @@ This repository contains a collection of beginner-friendly web development proje
 - A product landing page with a modern design.
 - **Tech used:** HTML, CSS  
 - **Screenshot:**  
-  ![Landing Page](screenshots/landing-page.png)
+  <p align="center">
+ <img src="landing-page.png" alt="Banner" />
+</p>
 
 ---
 
@@ -52,7 +58,9 @@ This repository contains a collection of beginner-friendly web development proje
 - A personal portfolio with About, Projects, and Contact sections.
 - **Tech used:** HTML, CSS  
 - **Screenshot:**  
-  ![Portfolio](screenshots/portfolio.png)
+ <p align="center">
+ <img src="portfolio.png" alt="Banner" />
+</p>
 
 ---
 
@@ -60,7 +68,9 @@ This repository contains a collection of beginner-friendly web development proje
 - A tribute page designed to honor a famous person.
 - **Tech used:** HTML, CSS  
 - **Screenshot:**  
-  ![Tribute Page](screenshots/Tribute-page.png)
+<p align="center">
+ <img src="Tribute-page.png" alt="Banner" />
+</p>
 
 ---
 
