@@ -10,7 +10,7 @@ This repository contains a collection of beginner-friendly web development proje
 - A basic calculator supporting addition, subtraction, multiplication, and division.
 - **Tech used:** HTML, CSS, JavaScript  
 <p align="center">
- <img src="Calculator.png" alt="Banner" />
+ <img src="Calculator.png" alt="Banner" width=50% />
 </p>
 
 ---
